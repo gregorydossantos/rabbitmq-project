@@ -1,5 +1,6 @@
 package com.project.rabbit_mq.infra.db.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,7 +40,7 @@ public class Order {
     @Column(name = "total")
     BigDecimal total;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     List<Item> items;
 
 }
